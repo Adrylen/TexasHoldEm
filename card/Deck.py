@@ -1,24 +1,20 @@
-from card import Card as cd
+from card.Card import Card
 import random
 
+
 class Deck:
-
-
     def __init__(self):
-        self.colors=['Spade','Heart','Diammond','Clover']
-        self.values=['2','3','4','5','6','7','8','9','10','Jack','Queen','King','As']
-        self.cards=[]
+        self.colors = ['Spade', 'Heart', 'Diamond', 'Clover']
+        self.values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'As']
+        self.cards = []
         self.rank = -1
 
         for color in self.colors:
             for value in self.values:
-                self.cards.append(cd.Card(color,value,self.values.index(value)+2))
+                self.cards.append(Card(color, value, self.values.index(value)+2))
 
     def __str__(self):
-        tostr = ''
-        for card in self.cards:
-            tostr +=  str(card) + '\n'
-        return (tostr)
+        return "".join([str(card) + "\n" for card in self.cards])
 
     def throw_card(self):
         self.rank += 1

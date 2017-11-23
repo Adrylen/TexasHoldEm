@@ -33,7 +33,7 @@ def main():
 	print(sys.version)
 	deck = Deck().shuffle()
 
-	players = distribute(deck, 2)
+	players = distribute(deck, 4)
 	river = get_river(deck)
 
 	winner = getbesthand(river, players)
@@ -68,5 +68,5 @@ def test():
 
 
 if __name__ == "__main__":
-	# main()
-	test()
+	main()
+	# test()
